@@ -1,0 +1,8 @@
+# Sensitive files
+.env
+*.key
+*.pem
+
+# backup files
+*.backup
+*.bak
