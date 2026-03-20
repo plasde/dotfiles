@@ -120,3 +120,4 @@ alias ...='cd ../..'
 export ZSHZ_ECHO=0
 bindkey '^E' autosuggest-accept
 export PATH=$PATH:$(go env GOPATH)/bin
+[ -f ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
