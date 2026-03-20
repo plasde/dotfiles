@@ -120,4 +120,10 @@ alias ...='cd ../..'
 export ZSHZ_ECHO=0
 bindkey '^E' autosuggest-accept
 export PATH=$PATH:$(go env GOPATH)/bin
+
 [ -f ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
+
+# WezTerm-only extras
+if [[ "$TERM_PROGRAM" == "WezTerm" || -n "$WEZTERM_PANE" ]]; then
+  source ~/.config/shell/wezterm_extras.rc
+fi

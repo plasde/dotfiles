@@ -1,0 +1,16 @@
+# Helper: only run if command exists
+has() { command -v "$1" &>/dev/null; }
+
+# Aliases (WezTerm only)
+has nvim && alias vim='nvim'
+alias ll='ls -lahF --color=auto'
+alias gs='git status'
+
+# tmux auto-attach
+if has tmux && [[ -z "$TMUX" ]]; then
+  tmux attach-session -t main 2>/dev/null || tmux new-session -s main
+fi
+
+# Tools - only init if present
+has starship && eval "$(starship init bash)"
+has zoxide   && eval "$(zoxide init bash)"
